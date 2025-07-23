@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Mail, Phone, Search } from 'lucide-react';
 import { MotionDiv } from '@/components/motion-wrapper';
+import Link from 'next/link';
 
 const faculty = [
   { name: 'Dr. Ramesh Kumar', department: 'Computer Science', role: 'Head of Department', email: 'ramesh.k@sei.edu', phone: '123-456-7890', image: 'https://placehold.co/100x100.png', aiHint: 'male professor' },
@@ -83,14 +84,14 @@ export default function DirectoryPage() {
                 <p className="text-primary">{person.role}</p>
                 <p className="text-sm text-muted-foreground">{person.department}</p>
                 <div className="mt-4 space-y-2 text-left text-sm">
-                  <a href={`mailto:${person.email}`} className="flex items-center gap-2 hover:text-primary">
+                  <Link href={`mailto:${person.email}`} className="flex items-center gap-2 hover:text-primary">
                     <Mail className="h-4 w-4 text-muted-foreground" />
                     <span>{person.email}</span>
-                  </a>
-                  <a href={`tel:${person.phone}`} className="flex items-center gap-2 hover:text-primary">
+                  </Link>
+                  <Link href={`tel:${person.phone}`} className="flex items-center gap-2 hover:text-primary">
                     <Phone className="h-4 w-4 text-muted-foreground" />
                     <span>{person.phone}</span>
-                  </a>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

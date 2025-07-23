@@ -24,7 +24,6 @@ export function Footer() {
               <li><Link href="/courses" className="hover:text-primary" prefetch={true}>Courses</Link></li>
               <li><Link href="/why-sei" className="hover:text-primary" prefetch={true}>Why SEI</Link></li>
               <li><Link href="/register" className="hover:text-primary" prefetch={true}>Admissions</Link></li>
-              <li><Link href="/contact" className="hover:text-primary" prefetch={true}>Contact Us</Link></li>
             </ul>
           </div>
           <div>
@@ -40,8 +39,8 @@ export function Footer() {
             <h3 className="font-headline font-semibold uppercase">Contact</h3>
             <address className="mt-4 not-italic text-sm">
               <p>123 University Ave, Knowledge City</p>
-              <p>Email: <a href="mailto:info@sei.edu" className="hover:text-primary">info@sei.edu</a></p>
-              <p>Phone: <a href="tel:+1234567890" className="hover:text-primary">(123) 456-7890</a></p>
+              <p>Email: <Link href="mailto:info@sei.edu" className="hover:text-primary">info@sei.edu</Link></p>
+              <p>Phone: <Link href="tel:+1234567890" className="hover:text-primary">(123) 456-7890</Link></p>
             </address>
           </div>
         </div>
@@ -51,9 +50,9 @@ export function Footer() {
               © {new Date().getFullYear()} Shailja Educational Institute. All Rights Reserved.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary"><Facebook /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary"><Twitter /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary"><Linkedin /></a>
+              <Link href="#" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary"><Twitter /></Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary"><Linkedin /></Link>
             </div>
           </div>
         </div>
