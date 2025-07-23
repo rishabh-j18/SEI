@@ -3,11 +3,12 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Logo } from "@/components/icons";
 import { cn } from "@/lib/utils";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -62,7 +63,7 @@ export function Header() {
                 <span className="sr-only">Open Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full">
+            <SheetContent side="right" className="flex w-full flex-col">
                 <SheetHeader className="border-b pb-4 text-left">
                     <SheetTitle>
                       <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)} prefetch={true}>
@@ -70,10 +71,10 @@ export function Header() {
                           <span className="font-headline text-xl font-bold">SEI</span>
                       </Link>
                     </SheetTitle>
-                    <SheetDescription className="sr-only">Main navigation menu</SheetDescription>
+                    <SheetDescription>Main navigation menu</SheetDescription>
                 </SheetHeader>
-              <div className="flex h-full flex-col">
-                <nav className="mt-8 flex flex-1 flex-col gap-y-4">
+              <ScrollArea className="flex-1">
+                <nav className="mt-8 flex flex-col gap-y-4 px-6">
                   {navItems.map((item) => (
                     <Link
                       key={item.href}
@@ -89,6 +90,8 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
+              </ScrollArea>
+              <div className="mt-auto p-6">
                 <Link href="/register" onClick={() => setIsOpen(false)} className="mt-auto" prefetch={true}>
                     <Button className="w-full" size="lg">Register Now</Button>
                 </Link>
