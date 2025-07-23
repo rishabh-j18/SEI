@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Logo } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +16,7 @@ const navItems = [
   { href: "/online-classes", label: "Online Classes" },
   { href: "/scholarship", label: "Scholarship" },
   { href: "/results", label: "Results" },
-  { href: "/syllabus-notes", label: "Syllabus &amp; Notes" },
+  { href: "/syllabus-notes", label: "Syllabus & Notes" },
   { href: "/directory", label: "Directory" },
   { href: "/calendar", label: "Calendar" },
   { href: "/resources", label: "Resources" },
@@ -63,17 +63,21 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full">
+                <SheetHeader className="flex-row items-center justify-between border-b pb-4">
+                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)} prefetch={true}>
+                        <Logo className="h-8 w-8 text-primary" />
+                        <span className="font-headline text-xl font-bold">SEI</span>
+                    </Link>
+                    <SheetClose asChild>
+                        <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                            <X className="h-6 w-6" />
+                            <span className="sr-only">Close Menu</span>
+                        </Button>
+                    </SheetClose>
+                    <SheetTitle className="sr-only">Menu</SheetTitle>
+                    <SheetDescription className="sr-only">Main navigation menu</SheetDescription>
+                </SheetHeader>
               <div className="flex h-full flex-col">
-                <div className="flex items-center justify-between border-b pb-4">
-                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)} prefetch={true}>
-                    <Logo className="h-8 w-8 text-primary" />
-                    <span className="font-headline text-xl font-bold">SEI</span>
-                  </Link>
-                  <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-                    <X className="h-6 w-6" />
-                    <span className="sr-only">Close Menu</span>
-                  </Button>
-                </div>
                 <nav className="mt-8 flex flex-1 flex-col gap-y-4">
                   {navItems.map((item) => (
                     <Link
