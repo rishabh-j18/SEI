@@ -29,7 +29,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+        <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)} prefetch={true}>
           <Logo className="h-8 w-8 text-primary" />
           <span className="hidden font-headline text-xl font-bold sm:inline-block">
             Shailja Educational Institute
@@ -41,6 +41,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
+              prefetch={true}
               className={cn(
                 "transition-colors hover:text-primary",
                 pathname === item.href ? "text-primary" : "text-muted-foreground"
@@ -49,7 +50,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/register">
+          <Link href="/register" prefetch={true}>
             <Button>Register Now</Button>
           </Link>
         </nav>
@@ -64,7 +65,7 @@ export function Header() {
             <SheetContent side="right" className="w-full">
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between border-b pb-4">
-                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)} prefetch={true}>
                     <Logo className="h-8 w-8 text-primary" />
                     <span className="font-headline text-xl font-bold">SEI</span>
                   </Link>
@@ -79,6 +80,7 @@ export function Header() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
+                      prefetch={true}
                       className={cn(
                         "rounded-md px-3 py-2 text-lg font-medium transition-colors hover:bg-muted",
                         pathname === item.href ? "text-primary" : "text-foreground"
@@ -88,7 +90,7 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                <Link href="/register" onClick={() => setIsOpen(false)} className="mt-auto">
+                <Link href="/register" onClick={() => setIsOpen(false)} className="mt-auto" prefetch={true}>
                     <Button className="w-full" size="lg">Register Now</Button>
                 </Link>
               </div>

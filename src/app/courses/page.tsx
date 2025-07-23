@@ -91,7 +91,7 @@ export default function CoursesPage() {
                 <p className="mt-4 font-semibold text-primary">{course.duration}</p>
               </CardContent>
               <CardFooter>
-                <Link href="/register" className="w-full">
+                <Link href="/register" className="w-full" prefetch={true}>
                   <Button variant="outline" className="w-full">
                     Apply Now <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>

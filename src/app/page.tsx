@@ -94,7 +94,7 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Link href="/courses">
+          <Link href="/courses" prefetch={true}>
             <Button size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
               Explore Our Courses <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

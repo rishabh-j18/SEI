@@ -99,7 +99,7 @@ export default function OnlineClassesPage() {
                       <span>{course.students.toLocaleString()} Students</span>
                     </div>
                   </div>
-                  <Link href="/register" className="w-full">
+                  <Link href="/register" className="w-full" prefetch={true}>
                     <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                       Enroll Now <PlayCircle className="ml-2 h-4 w-4" />
                     </Button>

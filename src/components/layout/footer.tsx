@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2" prefetch={true}>
               <Logo className="h-8 w-8 text-primary" />
               <span className="self-center whitespace-nowrap text-xl font-semibold font-headline">
                 SEI
@@ -21,19 +21,19 @@ export function Footer() {
           <div>
             <h3 className="font-headline font-semibold uppercase">Quick Links</h3>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link href="/courses" className="hover:text-primary">Courses</Link></li>
-              <li><Link href="/why-sei" className="hover:text-primary">Why SEI</Link></li>
-              <li><Link href="/register" className="hover:text-primary">Admissions</Link></li>
-              <li><Link href="/contact" className="hover:text-primary">Contact Us</Link></li>
+              <li><Link href="/courses" className="hover:text-primary" prefetch={true}>Courses</Link></li>
+              <li><Link href="/why-sei" className="hover:text-primary" prefetch={true}>Why SEI</Link></li>
+              <li><Link href="/register" className="hover:text-primary" prefetch={true}>Admissions</Link></li>
+              <li><Link href="/contact" className="hover:text-primary" prefetch={true}>Contact Us</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-headline font-semibold uppercase">Resources</h3>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link href="/calendar" className="hover:text-primary">Academic Calendar</Link></li>
-              <li><Link href="/syllabus-notes" className="hover:text-primary">Syllabus &amp; Notes</Link></li>
-              <li><Link href="/resources" className="hover:text-primary">Student Resources</Link></li>
-              <li><Link href="/directory" className="hover:text-primary">Directory</Link></li>
+              <li><Link href="/calendar" className="hover:text-primary" prefetch={true}>Academic Calendar</Link></li>
+              <li><Link href="/syllabus-notes" className="hover:text-primary" prefetch={true}>Syllabus &amp; Notes</Link></li>
+              <li><Link href="/resources" className="hover:text-primary" prefetch={true}>Student Resources</Link></li>
+              <li><Link href="/directory" className="hover:text-primary" prefetch={true}>Directory</Link></li>
             </ul>
           </div>
           <div>
