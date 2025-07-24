@@ -1,8 +1,15 @@
+
+'use client';
+
 import { Logo } from "@/components/icons";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   return (
     <footer className="mt-auto bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-8">
@@ -46,9 +53,22 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Shailja Educational Institute. All Rights Reserved.
-            </p>
+            <div className="text-sm text-muted-foreground">
+              <p>© {new Date().getFullYear()} Shailja Educational Institute. All Rights Reserved.</p>
+              {!isHomePage && (
+                 <p>
+                    Developed by{' '}
+                    <a 
+                        href="https://www.linkedin.com/in/anchalpandey29" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-semibold text-primary hover:underline"
+                    >
+                        Anchal Pandey
+                    </a>.
+                </p>
+              )}
+            </div>
             <div className="flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
               <Link href="#" className="text-muted-foreground hover:text-primary"><Twitter /></Link>
