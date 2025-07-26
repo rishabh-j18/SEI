@@ -174,7 +174,30 @@ const courseDetails: { [key: string]: any } = {
         ]
     }
   },
-  "up-police": { name: "UP POLICE", description: ["Detailed information about UP Police exam preparation will be updated soon."] }
+  "up-police": { 
+    name: "UP POLICE",
+    intro: "Prepare to serve and protect. Our UP Police coaching program is designed to build the physical and mental strength required to excel in the demanding law enforcement recruitment process.",
+    description: "SEI provides comprehensive training for the UP Police entrance exam, covering all aspects of the selection process. From written exams to physical fitness tests, our expert faculty will guide you every step of the way to ensure you are fully prepared to join the force.",
+    features: [
+        { title: "Interactive & Tech Enabled Classrooms", description: "Engage in dynamic learning with our state-of-the-art classroom technology and modern teaching aids." },
+        { title: "Exam Before Exam", description: "Experience real exam conditions with our frequent mock tests to build confidence and improve time management." },
+        { title: "Extraordinary Performance Analysis", description: "Receive detailed feedback and in-depth analysis of your performance to identify your strengths and weaknesses." },
+        { title: "Elaborated Content", description: "Access comprehensive and meticulously curated study materials covering the entire syllabus for the UP Police exam." }
+    ],
+    fees: {
+        title: "Fee Structure",
+        items: [
+            { name: "Admission + Kit Fee", amount: "1,500" },
+            { name: "Tuition Fee", amount: "48,500" },
+        ],
+        total: "50,000",
+        duration: "6 Months",
+        info: [
+            "EMI option available with 0% interest rate.",
+            "Admission + Kit Fee of 1,500 is non-refundable."
+        ]
+    }
+  }
 };
 
 export default function CourseDetailPage({ params }: { params: { slug: string } }) {
@@ -576,6 +599,71 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                             ))}
                             <div className="flex justify-between text-lg font-bold text-primary">
                                 <span>Total</span>
+                                <span className="flex items-center"><IndianRupee size={18}/> {course.fees.total}</span>
+                            </div>
+                             <Alert>
+                                <Info className="h-4 w-4" />
+                                <AlertTitle className="font-headline">Important Information</AlertTitle>
+                                <AlertDescription>
+                                    <ul className="list-disc pl-5 text-muted-foreground">
+                                        {course.fees.info.map((info: string, i: number) => <li key={i}>{info}</li>)}
+                                    </ul>
+                                </AlertDescription>
+                            </Alert>
+                        </CardContent>
+                     </Card>
+                </div>
+            </div>
+          </div>
+        </div>
+      );
+  }
+
+  if (params.slug === "up-police") {
+    return (
+        <div className="bg-background">
+          <div className="container mx-auto px-4 py-12">
+            {/* Hero Section */}
+            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+                <MotionDiv initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+                    <h1 className="font-headline text-4xl font-bold tracking-tight text-primary lg:text-5xl">{course.name}</h1>
+                    <p className="mt-4 text-lg text-muted-foreground">{course.intro}</p>
+                    <Link href="/register" prefetch={true}><Button size="lg" className="mt-6">Enroll Now</Button></Link>
+                </MotionDiv>
+                <MotionDiv initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
+                    <Image src="https://placehold.co/800x600.png" alt="UP Police" data-ai-hint="police training law" fill className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                </MotionDiv>
+            </div>
+            
+            {/* Features and Fees */}
+            <div className="mt-20 grid grid-cols-1 gap-12 lg:grid-cols-5">
+                <div className="lg:col-span-3">
+                    <h2 className="font-headline text-3xl font-bold">Key Features</h2>
+                    <p className="mt-2 text-muted-foreground">{course.description}</p>
+                    <div className="mt-6 space-y-6">
+                        {course.features.map((item: any, index: number) => (
+                             <MotionDiv key={item.title} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}>
+                                <Card>
+                                    <CardHeader><CardTitle className="flex items-center gap-3 font-headline"><CheckCircle className="text-primary"/>{item.title}</CardTitle></CardHeader>
+                                    <CardContent><p className="text-muted-foreground">{item.description}</p></CardContent>
+                                </Card>
+                            </MotionDiv>
+                        ))}
+                    </div>
+                </div>
+                <div className="lg:col-span-2">
+                     <Card className="sticky top-24">
+                        <CardHeader><CardTitle className="font-headline text-2xl">{course.fees.title}</CardTitle></CardHeader>
+                        <CardContent className="space-y-4">
+                            {course.fees.items.map((item: any) => (
+                                <div key={item.name} className="flex justify-between border-b pb-2">
+                                    <span>{item.name}</span>
+                                    <span className="font-semibold flex items-center"><IndianRupee size={16}/> {item.amount}</span>
+                                </div>
+                            ))}
+                            <div className="flex justify-between text-lg font-bold text-primary">
+                                <span>Total ({course.fees.duration})</span>
                                 <span className="flex items-center"><IndianRupee size={18}/> {course.fees.total}</span>
                             </div>
                              <Alert>
