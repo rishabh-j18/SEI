@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -60,7 +61,7 @@ export default function OnlineClassesPage() {
           Learn from anywhere, at your own pace. Explore our flexible and comprehensive online courses.
         </p>
       </MotionDiv>
-      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {onlineCourses.map((course, index) => (
           <MotionDiv
             key={course.title}
@@ -68,8 +69,8 @@ export default function OnlineClassesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 * index }}
           >
-            <Card className="flex h-full flex-col overflow-hidden transition-all hover:shadow-xl md:flex-row">
-              <div className="relative h-48 w-full md:h-auto md:w-1/3">
+            <Card className="flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl">
+              <div className="relative h-40 w-full">
                 <Image
                   src={course.image}
                   alt={course.title}
@@ -77,26 +78,24 @@ export default function OnlineClassesPage() {
                   fill
                   className="object-cover"
                 />
+                 <Badge variant={course.level === 'Beginner' ? 'secondary' : course.level === 'Intermediate' ? 'default' : 'destructive'} className="absolute right-3 top-3 capitalize">{course.level}</Badge>
               </div>
-              <div className="flex flex-1 flex-col">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="font-headline">{course.title}</CardTitle>
-                    <Badge variant={course.level === 'Beginner' ? 'secondary' : 'default'}>{course.level}</Badge>
-                  </div>
+              <div className="flex flex-1 flex-col p-6">
+                <CardHeader className="p-0">
+                    <CardTitle className="font-headline text-lg">{course.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-muted-foreground">{course.description}</p>
+                <CardContent className="flex-grow p-0 pt-3">
+                  <p className="text-sm text-muted-foreground">{course.description}</p>
                 </CardContent>
-                <CardFooter className="flex flex-col items-start gap-4">
-                  <div className="flex w-full items-center justify-between text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
+                <CardFooter className="flex-col items-start gap-4 p-0 pt-5">
+                  <div className="flex w-full items-center justify-between text-xs text-muted-foreground">
+                    <div className="flex items-center gap-1.5">
                       <Clock className="h-4 w-4" />
                       <span>{course.duration}</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5">
                       <Users className="h-4 w-4" />
-                      <span>{course.students.toLocaleString()} Students</span>
+                      <span>{course.students.toLocaleString()}</span>
                     </div>
                   </div>
                   <Link href="/register" className="w-full" prefetch={true}>
