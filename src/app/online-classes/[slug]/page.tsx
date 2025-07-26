@@ -13,6 +13,8 @@ const onlineCourseDetails: { [key: string]: any } = {
   "jee-mains-advanced-1-year": {
     name: "JEE (Main + Advanced) - 1 Year Online Program",
     description: "An intensive one-year online program designed to cover the complete JEE syllabus, enhance problem-solving skills, and prepare you for success in both Main and Advanced exams. Perfect for droppers and students in Class 12.",
+    image: "https://placehold.co/800x600.png",
+    aiHint: "student learning online",
     features: [
         { title: "Live Interactive Classes", description: "Engage with expert faculty in real-time and clear your doubts instantly." },
         { title: "Recorded Lectures", description: "Access recordings of all live classes to revise concepts at your own pace." },
@@ -33,6 +35,8 @@ const onlineCourseDetails: { [key: string]: any } = {
   "jee-mains-advanced-2-year": {
     name: "JEE (Main + Advanced) - 2 Year Online Program",
     description: "A comprehensive two-year foundation course starting from Class 11. This online program builds a strong conceptual base, covering the entire JEE syllabus alongside board exam preparation.",
+    image: "https://placehold.co/800x600.png",
+    aiHint: "student online lecture",
     features: [
         { title: "Structured Foundational Learning", description: "Build concepts from scratch with a curriculum designed for Class 11 & 12 students." },
         { title: "Personalized Mentorship", description: "Get dedicated mentors to guide you throughout your two-year preparation journey." },
@@ -53,6 +57,8 @@ const onlineCourseDetails: { [key: string]: any } = {
   "neet-1-year": {
     name: "NEET - 1 Year Repeater Online Program",
     description: "A focused one-year online program for NEET aspirants looking to reappear for the exam. The course is designed for intense revision, doubt clearing, and extensive test practice.",
+    image: "https://placehold.co/800x600.png",
+    aiHint: "medical student computer",
     features: [
         { title: "Fast-Track Syllabus Coverage", description: "Quick and thorough revision of the entire NEET syllabus by top medical faculty." },
         { title: "Error Analysis Sessions", description: "Specialized sessions to analyze mistakes made in tests and improve performance." },
@@ -73,6 +79,8 @@ const onlineCourseDetails: { [key: string]: any } = {
   "neet-2-year": {
     name: "NEET - 2 Year Foundation Online Program",
     description: "A two-year online program for aspiring medical students starting in Class 11. This course provides a solid foundation in Physics, Chemistry, and Biology to excel in NEET and board exams.",
+    image: "https://placehold.co/800x600.png",
+    aiHint: "doctor online consultation",
     features: [
         { title: "Concept Building from Basics", description: "Strengthen your fundamentals with our expertly designed two-year curriculum." },
         { title: "Interactive 3D Video Lectures", description: "Understand complex biological and chemical processes with immersive visuals." },
@@ -111,7 +119,7 @@ export default function OnlineCourseDetailPage({ params }: { params: { slug: str
                 <Link href="/register" prefetch={true}><Button size="lg" className="mt-6">Enroll Now</Button></Link>
             </MotionDiv>
             <MotionDiv initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                <Image src="https://placehold.co/800x600.png" alt={course.name} data-ai-hint="student learning online" fill className="object-cover" />
+                <Image src={course.image} alt={course.name} data-ai-hint={course.aiHint} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </MotionDiv>
         </div>
