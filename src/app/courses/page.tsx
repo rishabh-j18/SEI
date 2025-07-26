@@ -1,64 +1,64 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BookCheck, Briefcase, Building, Code, Microscope, Shield, Star } from "lucide-react";
+import { ArrowRight, BookCheck, Briefcase, Code, Microscope, Shield, Star } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv } from "@/components/motion-wrapper";
 
 const courses = [
     {
+        slug: "ssc-cgl",
         title: "SSC-CGL SUPER 30 (ANUSHAASAN BATCH)",
         description: "A specialized batch designed to crack the SSC-CGL exam with a disciplined and focused approach. Join SEI Campus, the best coaching center in India, to not only clear the exam but achieve a high rank.",
         image: "https://placehold.co/600x400.png",
         aiHint: "government exam preparation",
         duration: "1 Year",
         icon: Star,
-        href: "/courses/ssc-cgl"
     },
     {
+        slug: "jee-mains",
         title: "JEE MAINS",
         description: "Comprehensive preparation for the Joint Entrance Examination (Main) to get into top engineering colleges.",
         image: "https://placehold.co/600x400.png",
         aiHint: "engineering student studying",
         duration: "2 Years",
         icon: Code,
-        href: "#"
     },
     {
+        slug: "boards",
         title: "Boards",
         description: "Focused curriculum to excel in Class X and XII board examinations for CBSE, ICSE, and state boards.",
         image: "https://placehold.co/600x400.png",
         aiHint: "student writing exam",
         duration: "1 Year",
         icon: BookCheck,
-        href: "#"
     },
     {
+        slug: "neet",
         title: "NEET",
         description: "Intensive coaching for the National Eligibility cum Entrance Test for aspiring medical students.",
         image: "https://placehold.co/600x400.png",
         aiHint: "medical student dna",
         duration: "2 Years",
         icon: Microscope,
-        href: "#"
     },
     {
+        slug: "bank",
         title: "BANK",
         description: "Targeted training for various banking sector exams like IBPS PO, Clerk, and Specialist Officer.",
         image: "https://placehold.co/600x400.png",
         aiHint: "banking finance",
         duration: "6 Months",
         icon: Briefcase,
-        href: "#"
     },
     {
+        slug: "up-police",
         title: "UP POLICE",
         description: "Rigorous physical and academic training to prepare candidates for the Uttar Pradesh Police recruitment.",
         image: "https://placehold.co/600x400.png",
         aiHint: "police officer",
         duration: "6 Months",
         icon: Shield,
-        href: "#"
     },
 ];
 
@@ -145,7 +145,7 @@ export default function CoursesPage() {
                     </CardContent>
                     <CardFooter className="flex-col items-start gap-4">
                         <div className="font-semibold text-primary">{course.duration}</div>
-                         <Link href={course.href} className="w-full" prefetch={true}>
+                         <Link href={`/courses/${course.slug}`} className="w-full" prefetch={true}>
                             <Button variant="outline" className="w-full">
                                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
