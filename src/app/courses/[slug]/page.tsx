@@ -10,6 +10,9 @@ import { notFound } from "next/navigation";
 const courseDetails: { [key: string]: any } = {
   "ssc-cgl": {
     name: "SSC-CGL SUPER 30 (ANUSHAASAN BATCH)",
+    image: "https://placehold.co/800x600.png",
+    alt: "SSC CGL Preparation",
+    aiHint: "students exam success",
     description: [
         "Today SSC is one of the most sought-after exams by the students who have just completed their graduation. In the recent years the cut- off of SSC has changed tremendously. And this all became possible because students are now much better aware about the exam and the level of the completion.",
         "SEI CAMPUS is the best coaching center in India. Our students not only just clear the exams but also manage to get a high rank which in turn helps them to get the job of their dream.",
@@ -58,6 +61,9 @@ const courseDetails: { [key: string]: any } = {
   },
   "jee-mains": { 
     name: "JEE (Main+Advanced) 2025-26",
+    image: "https://placehold.co/800x600.png",
+    alt: "JEE Preparation",
+    aiHint: "engineering students studying",
     intro: "SEI ensures to provide quality education for the optimum results and success of students, so far, we have acquired remarkable selection ratios in competitive exams.",
     description: "SEI has long been distinguished for providing the Best Classroom Coaching, Online Learning Facility and getting excellent results. The curriculum is specifically designed for the JEE 2027 aspirants along with their 11th & Board preparations. To strengthen the foundation, conceptual knowledge and enhance the academic skills this course is the best option. The course helps the aspirants with better understanding of the examination pattern and ensure their success in the JEE with ease through a year-long curriculum.",
     highlights: [
@@ -103,6 +109,9 @@ const courseDetails: { [key: string]: any } = {
    },
   "boards": { 
     name: "Class X & XII Boards (CBSE, ICSE, UP)",
+    image: "https://placehold.co/800x600.png",
+    alt: "Students in a classroom",
+    aiHint: "students classroom exam",
     intro: "Excel in your board exams with our comprehensive coaching for UP, CBSE, and ICSE students. Build a strong foundation and achieve outstanding results.",
     description: "Our board preparation course is designed to provide students with a thorough understanding of the syllabus for CBSE, ICSE, and UP boards. We focus on clearing fundamental concepts, providing extensive practice, and conducting regular assessments to ensure students are well-prepared to score high marks in their final examinations.",
     features: [
@@ -126,6 +135,9 @@ const courseDetails: { [key: string]: any } = {
   },
   "neet": { 
     name: "NEET (PRE-MEDICAL) 2025-26",
+    image: "https://placehold.co/800x600.png",
+    alt: "NEET Preparation",
+    aiHint: "medical students doctor",
     intro: "SEI ensures to provide quality education for the optimum results and success of students, so far, we have acquired remarkable selection ratios in competitive exams.",
     highlights: [
         "Structured Academic Planner for NEET 2027.",
@@ -153,6 +165,9 @@ const courseDetails: { [key: string]: any } = {
   },
   "bank": {
     name: "BANK",
+    image: "https://placehold.co/800x600.png",
+    alt: "Banking and Finance",
+    aiHint: "banking finance success",
     intro: "If you're an individual looking for growth and success, the banking sector is for you. When you think about a career in banking, think about collaborating with SEI. After all, the best careers require the best guidance.",
     description: "Financial institutions are a prime opportunity for students, as this is an industry that always shows growth. If you have the capability of being trustworthy and you attain a sense of responsibility, the banking sector is for you.",
     features: [
@@ -177,6 +192,9 @@ const courseDetails: { [key: string]: any } = {
   },
   "up-police": { 
     name: "UP POLICE",
+    image: "https://placehold.co/800x600.png",
+    alt: "UP Police",
+    aiHint: "police training law",
     intro: "Prepare to serve and protect. Our UP Police coaching program is designed to build the physical and mental strength required to excel in the demanding law enforcement recruitment process.",
     description: "SEI provides comprehensive training for the UP Police entrance exam, covering all aspects of the selection process. From written exams to physical fitness tests, our expert faculty will guide you every step of the way to ensure you are fully prepared to join the force.",
     features: [
@@ -236,9 +254,9 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl"
               >
                 <Image
-                  src="https://placehold.co/800x600.png"
-                  alt="SSC CGL Preparation"
-                  data-ai-hint="students exam success"
+                  src={course.image}
+                  alt={course.alt}
+                  data-ai-hint={course.aiHint}
                   fill
                   className="object-cover"
                 />
@@ -334,7 +352,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                     <Link href="/register" prefetch={true}><Button size="lg" className="mt-6">Enroll Now</Button></Link>
                 </MotionDiv>
                 <MotionDiv initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                    <Image src="https://placehold.co/800x600.png" alt="JEE Preparation" data-ai-hint="engineering students studying" fill className="object-cover" />
+                    <Image src={course.image} alt={course.alt} data-ai-hint={course.aiHint} fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </MotionDiv>
             </div>
@@ -423,7 +441,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                     <Link href="/register" prefetch={true}><Button size="lg" className="mt-6">Enroll Now</Button></Link>
                 </MotionDiv>
                 <MotionDiv initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                    <Image src="https://placehold.co/800x600.png" alt="Students in a classroom" data-ai-hint="students classroom exam" fill className="object-cover" />
+                    <Image src={course.image} alt={course.alt} data-ai-hint={course.aiHint} fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </MotionDiv>
             </div>
@@ -486,7 +504,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                     <Link href="/register" prefetch={true}><Button size="lg" className="mt-6">Enroll Now</Button></Link>
                 </MotionDiv>
                 <MotionDiv initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                    <Image src="https://placehold.co/800x600.png" alt="NEET Preparation" data-ai-hint="medical students doctor" fill className="object-cover" />
+                    <Image src={course.image} alt={course.alt} data-ai-hint={course.aiHint} fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </MotionDiv>
             </div>
@@ -560,7 +578,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                     <Link href="/register" prefetch={true}><Button size="lg" className="mt-6">Enroll Now</Button></Link>
                 </MotionDiv>
                 <MotionDiv initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                    <Image src="https://placehold.co/800x600.png" alt="Banking and Finance" data-ai-hint="banking finance success" fill className="object-cover" />
+                    <Image src={course.image} alt={course.alt} data-ai-hint={course.aiHint} fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </MotionDiv>
             </div>
@@ -623,7 +641,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                     <Link href="/register" prefetch={true}><Button size="lg" className="mt-6">Enroll Now</Button></Link>
                 </MotionDiv>
                 <MotionDiv initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative h-96 w-full overflow-hidden rounded-lg shadow-xl">
-                    <Image src="https://placehold.co/800x600.png" alt="UP Police" data-ai-hint="police training law" fill className="object-cover" />
+                    <Image src={course.image} alt={course.alt} data-ai-hint={course.aiHint} fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </MotionDiv>
             </div>
