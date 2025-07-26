@@ -1,9 +1,33 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Calendar, Megaphone, Newspaper } from 'lucide-react';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowRight, BookOpen, Calendar, Megaphone, Newspaper } from 'lucide-react';
 import Link from 'next/link';
 import { MotionDiv } from '@/components/motion-wrapper';
+
+const featuredCourses = [
+  {
+    title: "Computer Science Engineering",
+    description: "Explore the world of algorithms, data structures, and software development.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "computer science",
+    href: "/courses"
+  },
+  {
+    title: "Mechanical Engineering",
+    description: "Dive into the principles of mechanics, thermodynamics, and material science.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "mechanical engineering",
+    href: "/courses"
+  },
+  {
+    title: "Business Administration (BBA)",
+    description: "Develop leadership and management skills to excel in the corporate world.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "business administration",
+    href: "/courses"
+  },
+];
 
 const announcements = [
   {
@@ -46,8 +70,9 @@ const recentNews = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-12 md:gap-16">
+    <div className="flex flex-col gap-12 md:gap-24">
       <HeroSection />
+      <FeaturedCoursesSection />
       <main className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
           <InfoSection icon={Megaphone} title="Announcements" items={announcements} />
@@ -105,6 +130,73 @@ function HeroSection() {
   );
 }
 
+function FeaturedCoursesSection() {
+  return (
+    <section className="container mx-auto px-4">
+      <MotionDiv
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center"
+      >
+        <h2 className="font-headline text-3xl font-bold tracking-tight lg:text-4xl">
+          Our Flagship Programs
+        </h2>
+        <p className="mt-3 max-w-2xl mx-auto text-lg text-muted-foreground">
+          Discover a wide range of programs designed to equip you with the skills and knowledge for a successful career.
+        </p>
+      </MotionDiv>
+      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {featuredCourses.map((course, index) => (
+           <MotionDiv
+            key={course.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 * (index + 2) }}
+          >
+            <Card className="flex h-full flex-col overflow-hidden transition-all hover:shadow-xl">
+               <div className="relative h-48 w-full">
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  data-ai-hint={course.aiHint}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="font-headline">{course.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">{course.description}</p>
+              </CardContent>
+              <CardFooter>
+                 <Link href={course.href} className="w-full" prefetch={true}>
+                  <Button variant="outline" className="w-full">
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+          </MotionDiv>
+        ))}
+      </div>
+       <MotionDiv
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="mt-12 text-center"
+      >
+        <Link href="/courses" prefetch={true}>
+          <Button size="lg" variant="ghost">
+            View All Courses <BookOpen className="ml-2 h-5 w-5" />
+          </Button>
+        </Link>
+      </MotionDiv>
+    </section>
+  )
+}
+
 interface InfoItem {
   title: string;
   date: string;
@@ -122,7 +214,7 @@ function InfoSection({ icon: Icon, title, items }: InfoSectionProps) {
     <MotionDiv
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.6 }}
+      transition={{ duration: 0.5, delay: 0.8 }}
       className="space-y-6"
     >
       <div className="flex items-center gap-4">
