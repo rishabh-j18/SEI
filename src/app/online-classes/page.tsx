@@ -53,11 +53,12 @@ export default function OnlineClassesPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        className="text-center"
       >
         <h1 className="font-headline text-4xl font-bold tracking-tight lg:text-5xl">
           Online Classes
         </h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-3 max-w-2xl text-lg text-muted-foreground">
           Learn from anywhere, at your own pace. Explore our flexible and comprehensive online courses for JEE & NEET.
         </p>
       </MotionDiv>
