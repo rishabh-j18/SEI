@@ -1,58 +1,58 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BookCheck, Code, Microscope, Building, Briefcase, BarChart } from "lucide-react";
+import { ArrowRight, BookCheck, Briefcase, Building, Code, Microscope, Shield, Star } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv } from "@/components/motion-wrapper";
 
 const courses = [
     {
-        title: "Computer Science Engineering",
-        description: "Explore algorithms, data structures, AI, and software development in our flagship CSE program.",
+        title: "SSC-CGL SUPER 30 (ANUSHAASAN BATCH)",
+        description: "A specialized batch designed to crack the SSC-CGL exam with a disciplined and focused approach.",
         image: "https://placehold.co/600x400.png",
-        aiHint: "computer science student",
-        duration: "4 Years",
+        aiHint: "government exam preparation",
+        duration: "1 Year",
+        icon: Star,
+    },
+    {
+        title: "JEE MAINS",
+        description: "Comprehensive preparation for the Joint Entrance Examination (Main) to get into top engineering colleges.",
+        image: "https://placehold.co/600x400.png",
+        aiHint: "engineering student studying",
+        duration: "2 Years",
         icon: Code,
     },
     {
-        title: "Mechanical Engineering",
-        description: "Dive into mechanics, thermodynamics, and material science to design and build innovative machines.",
+        title: "Boards",
+        description: "Focused curriculum to excel in Class X and XII board examinations for CBSE, ICSE, and state boards.",
         image: "https://placehold.co/600x400.png",
-        aiHint: "mechanical engineering gear",
-        duration: "4 Years",
+        aiHint: "student writing exam",
+        duration: "1 Year",
+        icon: BookCheck,
+    },
+    {
+        title: "NEET",
+        description: "Intensive coaching for the National Eligibility cum Entrance Test for aspiring medical students.",
+        image: "https://placehold.co/600x400.png",
+        aiHint: "medical student dna",
+        duration: "2 Years",
         icon: Microscope,
     },
     {
-        title: "Civil Engineering",
-        description: "Learn to design, construct, and maintain foundational structures like bridges and smart cities.",
+        title: "BANK",
+        description: "Targeted training for various banking sector exams like IBPS PO, Clerk, and Specialist Officer.",
         image: "https://placehold.co/600x400.png",
-        aiHint: "civil engineering bridge",
-        duration: "4 Years",
-        icon: Building,
-    },
-    {
-        title: "Business Administration (BBA)",
-        description: "Develop leadership and management skills with specializations in finance, marketing, and HR.",
-        image: "https://placehold.co/600x400.png",
-        aiHint: "business meeting",
-        duration: "3 Years",
+        aiHint: "banking finance",
+        duration: "6 Months",
         icon: Briefcase,
     },
     {
-        title: "Master of Business Administration (MBA)",
-        description: "Advance your career with our MBA program, focused on strategic thinking and global challenges.",
+        title: "UP POLICE",
+        description: "Rigorous physical and academic training to prepare candidates for the Uttar Pradesh Police recruitment.",
         image: "https://placehold.co/600x400.png",
-        aiHint: "mba graduation",
-        duration: "2 Years",
-        icon: BarChart,
-    },
-    {
-        title: "Bachelor of Science (BSc) in IT",
-        description: "Gain expertise in information technology, covering networks, security, and database management.",
-        image: "https://placehold.co/600x400.png",
-        aiHint: "information technology network",
-        duration: "3 Years",
-        icon: Code,
+        aiHint: "police officer",
+        duration: "6 Months",
+        icon: Shield,
     },
 ];
 
