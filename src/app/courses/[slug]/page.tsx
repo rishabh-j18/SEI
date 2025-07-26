@@ -168,6 +168,7 @@ const courseDetails: { [key: string]: any } = {
             { name: "Tuition Fee", amount: "80,000" },
         ],
         total: "81,500",
+        duration: "6 Months",
         info: [
             "EMI option available with 0% interest rate.",
             "Admission + Kit Fee of 1,500 is non-refundable."
@@ -591,7 +592,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                                 </div>
                             ))}
                             <div className="flex justify-between text-lg font-bold text-primary">
-                                <span>Total</span>
+                                <span>Total ({course.fees.duration})</span>
                                 <span className="flex items-center"><IndianRupee size={18}/> {course.fees.total}</span>
                             </div>
                              <Alert>
