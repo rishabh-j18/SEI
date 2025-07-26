@@ -45,9 +45,9 @@ export function Footer() {
           <div>
             <h3 className="font-headline font-semibold uppercase">Contact</h3>
             <address className="mt-4 not-italic text-sm">
-              <p>123 University Ave, Knowledge City</p>
+              <p>347, Near Naka Bypas Ayodhya, Uttar Pradesh 224001</p>
               <p>Email: <Link href="mailto:info@sei.edu" className="hover:text-primary">info@sei.edu</Link></p>
-              <p>Phone: <Link href="tel:+1234567890" className="hover:text-primary">(123) 456-7890</Link></p>
+              <p>Phone: <Link href="tel:+917355612076" className="hover:text-primary">(+91) 735 561 2076</Link></p>
             </address>
           </div>
         </div>

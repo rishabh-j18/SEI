@@ -1,70 +1,73 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, BookOpen, Calendar, Megaphone, Newspaper } from 'lucide-react';
+import { ArrowRight, BookOpen, Calendar, Megaphone, Newspaper, Star, Microscope, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import { MotionDiv } from '@/components/motion-wrapper';
 
 const featuredCourses = [
   {
-    title: "Computer Science Engineering",
-    description: "Explore the world of algorithms, data structures, and software development.",
+    title: "SSC-CGL (ANUSHAASAN BATCH)",
+    description: "A specialized batch to crack the SSC-CGL exam with a disciplined approach.",
     image: "https://placehold.co/600x400.png",
-    aiHint: "computer science",
-    href: "/courses"
+    aiHint: "government exam success",
+    href: "/courses/ssc-cgl",
+    icon: Star
   },
   {
-    title: "Mechanical Engineering",
-    description: "Dive into the principles of mechanics, thermodynamics, and material science.",
+    title: "NEET",
+    description: "Intensive coaching for the National Eligibility cum Entrance Test for aspiring medical students.",
     image: "https://placehold.co/600x400.png",
-    aiHint: "mechanical engineering",
-    href: "/courses"
+    aiHint: "medical student dna",
+    href: "/courses/neet",
+    icon: Microscope
   },
   {
-    title: "Business Administration (BBA)",
-    description: "Develop leadership and management skills to excel in the corporate world.",
+    title: "BANK",
+    description: "Targeted training for various banking sector exams like IBPS PO, Clerk, and Specialist Officer.",
     image: "https://placehold.co/600x400.png",
-    aiHint: "business administration",
-    href: "/courses"
+    aiHint: "banking finance money",
+    href: "/courses/bank",
+    icon: Briefcase
   },
 ];
 
 const announcements = [
   {
-    title: 'Mid-term Exams Schedule Released',
+    title: 'New Batches for SSC-CGL Starting Soon',
     date: '2024-09-01',
-    description: 'The schedule for the upcoming mid-term examinations for all departments has been published. Please check the student portal for details.',
+    description: 'Enrollment is now open for our new "Anushaasan" batch for SSC-CGL preparation. Limited seats available.',
   },
   {
-    title: 'Annual Sports Day Registration Open',
+    title: 'SEIST Scholarship Test Date Announced',
     date: '2024-08-28',
-    description: 'Registrations for the annual sports day events are now open. All students are encouraged to participate.',
+    description: 'The next SEI Scholarship Test (SEIST) will be held on October 15th. Register now to avail up to 100% scholarship.',
   },
 ];
 
 const upcomingEvents = [
   {
-    title: 'Guest Lecture on AI',
+    title: 'Free Seminar on Cracking JEE Mains',
     date: '2024-09-15',
-    description: 'A special guest lecture by Dr. Anya Sharma on the future of Artificial Intelligence. Venue: Auditorium.',
+    description: 'Join our expert faculty for a free seminar on effective strategies to crack the JEE Mains exam. Venue: SEI Auditorium.',
   },
   {
-    title: 'Inter-College Debate Competition',
+    title: 'Live Q&A with NEET Toppers',
     date: '2024-09-22',
-    description: 'The annual inter-college debate competition will be held. Topics will be announced on the day of the event.',
+    description: 'An exclusive online session with our previous years NEET toppers. Ask your questions and get inspired.',
   },
 ];
 
 const recentNews = [
   {
-    title: 'SEI Ranked Top 10 in National Survey',
+    title: 'Record Selections in Bank PO Exams',
     date: '2024-08-25',
-    description: 'We are proud to announce that Shailja Educational Institute has been ranked among the top 10 engineering colleges in the recent national survey.',
+    description: 'We are proud to announce over 200 selections from SEI in the recent Bank PO examinations. Congratulations to our students!',
   },
   {
-    title: 'Successful Tech Fest 2024',
+    title: 'SEI Student Secures AIR 45 in NEET',
     date: '2024-08-20',
-    description: 'Our annual tech fest, "Innovate 2024", concluded with record participation and groundbreaking projects.',
+    description: 'Our student, Priya Singh, has made us proud by securing an All India Rank of 45 in the NEET 2024 exams.',
   },
 ];
 
@@ -89,8 +92,8 @@ function HeroSection() {
     <section className="relative h-[60vh] w-full bg-secondary">
       <Image
         src="https://placehold.co/1800x1000.png"
-        alt="University Campus"
-        data-ai-hint="university campus"
+        alt="Students preparing for competitive exams"
+        data-ai-hint="students exam preparation"
         fill
         className="object-cover"
       />
@@ -111,7 +114,7 @@ function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            Nurturing Minds, Shaping Futures
+            Your Gateway to Success in Competitive Exams
           </p>
         </MotionDiv>
         <MotionDiv
@@ -140,10 +143,10 @@ function FeaturedCoursesSection() {
         className="text-center"
       >
         <h2 className="font-headline text-3xl font-bold tracking-tight lg:text-4xl">
-          Our Flagship Programs
+          Our Premier Coaching Programs
         </h2>
         <p className="mt-3 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Discover a wide range of programs designed to equip you with the skills and knowledge for a successful career.
+          Top-tier coaching designed to help you excel in India's most competitive exams.
         </p>
       </MotionDiv>
       <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -165,7 +168,7 @@ function FeaturedCoursesSection() {
                 />
               </div>
               <CardHeader>
-                <CardTitle className="font-headline">{course.title}</CardTitle>
+                <CardTitle className="font-headline flex items-center gap-3"><course.icon className="h-6 w-6 text-primary" />{course.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
                 <p className="text-muted-foreground">{course.description}</p>
