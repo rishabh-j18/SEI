@@ -3,46 +3,50 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { PlayCircle, Users, Clock } from "lucide-react";
+import { PlayCircle, Users, Clock, IndianRupee, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv } from "@/components/motion-wrapper";
 
 const onlineCourses = [
   {
-    title: "Introduction to Python Programming",
-    description: "A beginner-friendly course covering the fundamentals of Python, one of the most popular programming languages.",
+    slug: "jee-mains-advanced-1-year",
+    title: "JEE (Main + Advanced) - 1 Year Program",
+    description: "An intensive one-year online program designed to cover the complete JEE syllabus and boost your problem-solving skills.",
     image: "https://placehold.co/600x400.png",
-    aiHint: "python code",
-    level: "Beginner",
-    duration: "8 Weeks",
-    students: 1250,
-  },
-  {
-    title: "Digital Marketing Fundamentals",
-    description: "Learn the core concepts of digital marketing, including SEO, SEM, social media marketing, and content strategy.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "digital marketing",
-    level: "Beginner",
-    duration: "6 Weeks",
-    students: 980,
-  },
-  {
-    title: "Advanced Machine Learning",
-    description: "Deep dive into advanced topics in machine learning like deep neural networks, reinforcement learning, and more.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "machine learning",
-    level: "Advanced",
-    duration: "12 Weeks",
-    students: 450,
-  },
-  {
-    title: "Project Management Professional (PMP) Prep",
-    description: "Prepare for the PMP certification with this comprehensive course covering all knowledge areas of project management.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "project management",
+    aiHint: "engineering student online",
     level: "Intermediate",
-    duration: "10 Weeks",
-    students: 720,
+    duration: "1 Year",
+    price: "85,000",
+  },
+  {
+    slug: "jee-mains-advanced-2-year",
+    title: "JEE (Main + Advanced) - 2 Year Program",
+    description: "A comprehensive two-year foundation course for JEE, building concepts from the ground up for 11th grade students.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "engineering online class",
+    level: "Beginner",
+    duration: "2 Years",
+    price: "150,000",
+  },
+  {
+    slug: "neet-1-year",
+    title: "NEET - 1 Year Repeater Program",
+    description: "A focused one-year online course for NEET repeaters, aimed at strengthening concepts and improving test scores.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "medical student online",
+    level: "Advanced",
+    duration: "1 Year",
+    price: "80,000",
+  },
+  {
+    slug: "neet-2-year",
+    title: "NEET - 2 Year Foundation Program",
+    description: "A two-year online program for aspiring medical students, covering the NEET syllabus alongside board exam preparation.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "doctor online class",
+    level: "Beginner",
+    duration: "2 Years",
+    price: "140,000",
   },
 ];
 
@@ -58,7 +62,7 @@ export default function OnlineClassesPage() {
           Online Classes
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          Learn from anywhere, at your own pace. Explore our flexible and comprehensive online courses.
+          Learn from anywhere, at your own pace. Explore our flexible and comprehensive online courses for JEE & NEET.
         </p>
       </MotionDiv>
       <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -88,19 +92,19 @@ export default function OnlineClassesPage() {
                   <p className="text-sm text-muted-foreground">{course.description}</p>
                 </CardContent>
                 <CardFooter className="flex-col items-start gap-4 p-0 pt-5">
+                   <div className="flex items-center gap-1.5 text-xl font-bold text-primary">
+                      <IndianRupee size={18}/>
+                      <span>{course.price}</span>
+                    </div>
                   <div className="flex w-full items-center justify-between text-xs text-muted-foreground">
                     <div className="flex items-center gap-1.5">
                       <Clock className="h-4 w-4" />
                       <span>{course.duration}</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <Users className="h-4 w-4" />
-                      <span>{course.students.toLocaleString()}</span>
-                    </div>
                   </div>
-                  <Link href="/register" className="w-full" prefetch={true}>
+                  <Link href={`/online-classes/${course.slug}`} className="w-full" prefetch={true}>
                     <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                      Enroll Now <PlayCircle className="ml-2 h-4 w-4" />
+                      View Details <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                 </CardFooter>
