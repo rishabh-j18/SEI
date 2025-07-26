@@ -8,11 +8,12 @@ import { MotionDiv } from "@/components/motion-wrapper";
 const courses = [
     {
         title: "SSC-CGL SUPER 30 (ANUSHAASAN BATCH)",
-        description: "A specialized batch designed to crack the SSC-CGL exam with a disciplined and focused approach.",
+        description: "A specialized batch designed to crack the SSC-CGL exam with a disciplined and focused approach. Join SEI Campus, the best coaching center in India, to not only clear the exam but achieve a high rank.",
         image: "https://placehold.co/600x400.png",
         aiHint: "government exam preparation",
         duration: "1 Year",
         icon: Star,
+        href: "/courses/ssc-cgl"
     },
     {
         title: "JEE MAINS",
@@ -21,6 +22,7 @@ const courses = [
         aiHint: "engineering student studying",
         duration: "2 Years",
         icon: Code,
+        href: "#"
     },
     {
         title: "Boards",
@@ -29,6 +31,7 @@ const courses = [
         aiHint: "student writing exam",
         duration: "1 Year",
         icon: BookCheck,
+        href: "#"
     },
     {
         title: "NEET",
@@ -37,6 +40,7 @@ const courses = [
         aiHint: "medical student dna",
         duration: "2 Years",
         icon: Microscope,
+        href: "#"
     },
     {
         title: "BANK",
@@ -45,6 +49,7 @@ const courses = [
         aiHint: "banking finance",
         duration: "6 Months",
         icon: Briefcase,
+        href: "#"
     },
     {
         title: "UP POLICE",
@@ -53,6 +58,7 @@ const courses = [
         aiHint: "police officer",
         duration: "6 Months",
         icon: Shield,
+        href: "#"
     },
 ];
 
@@ -139,9 +145,9 @@ export default function CoursesPage() {
                     </CardContent>
                     <CardFooter className="flex-col items-start gap-4">
                         <div className="font-semibold text-primary">{course.duration}</div>
-                         <Link href="/register" className="w-full" prefetch={true}>
+                         <Link href={course.href} className="w-full" prefetch={true}>
                             <Button variant="outline" className="w-full">
-                                Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+                                Learn More <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                         </Link>
                     </CardFooter>
