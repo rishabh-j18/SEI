@@ -14,7 +14,6 @@ const onlineCourses = [
     description: "An intensive one-year online program designed to cover the complete JEE syllabus and boost your problem-solving skills.",
     image: "https://placehold.co/600x400.png",
     aiHint: "engineering student online",
-    level: "Intermediate",
     duration: "1 Year",
     price: "85,000",
   },
@@ -24,7 +23,6 @@ const onlineCourses = [
     description: "A comprehensive two-year foundation course for JEE, building concepts from the ground up for 11th grade students.",
     image: "https://placehold.co/600x400.png",
     aiHint: "engineering online class",
-    level: "Beginner",
     duration: "2 Years",
     price: "150,000",
   },
@@ -34,7 +32,6 @@ const onlineCourses = [
     description: "A focused one-year online course for NEET repeaters, aimed at strengthening concepts and improving test scores.",
     image: "https://placehold.co/600x400.png",
     aiHint: "medical student online",
-    level: "Advanced",
     duration: "1 Year",
     price: "80,000",
   },
@@ -44,7 +41,6 @@ const onlineCourses = [
     description: "A two-year online program for aspiring medical students, covering the NEET syllabus alongside board exam preparation.",
     image: "https://placehold.co/600x400.png",
     aiHint: "doctor online class",
-    level: "Beginner",
     duration: "2 Years",
     price: "140,000",
   },
@@ -82,7 +78,6 @@ export default function OnlineClassesPage() {
                   fill
                   className="object-cover"
                 />
-                 <Badge variant={course.level === 'Beginner' ? 'secondary' : course.level === 'Intermediate' ? 'default' : 'destructive'} className="absolute right-3 top-3 capitalize">{course.level}</Badge>
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <CardHeader className="p-0">
