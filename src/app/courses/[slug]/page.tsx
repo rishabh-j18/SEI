@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, IndianRupee, Info } from "lucide-react";
+import { CheckCircle, IndianRupee, Info, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { MotionDiv } from "@/components/motion-wrapper";
@@ -202,13 +202,14 @@ const courseDetails: { [key: string]: any } = {
 
 export default function CourseDetailPage({ params }: { params: { slug: string } }) {
   const course = courseDetails[params.slug];
+  let courseContent;
 
   if (!course) {
     notFound();
   }
   
   if (params.slug === "ssc-cgl") {
-    return (
+    courseContent = (
         <div className="bg-background">
           <div className="container mx-auto px-4 py-12">
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -320,10 +321,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </div>
         </div>
       );
-  }
-
-  if (params.slug === "jee-mains") {
-    return (
+  } else if (params.slug === "jee-mains") {
+    courseContent = (
         <div className="bg-background">
           <div className="container mx-auto px-4 py-12">
             {/* Hero Section */}
@@ -411,10 +410,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </div>
         </div>
       );
-  }
-
-  if (params.slug === "boards") {
-    return (
+  } else if (params.slug === "boards") {
+    courseContent = (
         <div className="bg-background">
           <div className="container mx-auto px-4 py-12">
             {/* Hero Section */}
@@ -476,10 +473,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </div>
         </div>
       );
-  }
-
-  if (params.slug === "neet") {
-    return (
+  } else if (params.slug === "neet") {
+    courseContent = (
         <div className="bg-background">
           <div className="container mx-auto px-4 py-12">
             {/* Hero Section */}
@@ -552,10 +547,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </div>
         </div>
       );
-  }
-
-  if (params.slug === "bank") {
-    return (
+  } else if (params.slug === "bank") {
+    courseContent = (
         <div className="bg-background">
           <div className="container mx-auto px-4 py-12">
             {/* Hero Section */}
@@ -617,10 +610,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </div>
         </div>
       );
-  }
-
-  if (params.slug === "up-police") {
-    return (
+  } else if (params.slug === "up-police") {
+    courseContent = (
         <div className="bg-background">
           <div className="container mx-auto px-4 py-12">
             {/* Hero Section */}
@@ -682,42 +673,55 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </div>
         </div>
       );
+  } else {
+    // A generic layout for other courses
+    courseContent = (
+      <div className="container mx-auto px-4 py-12">
+          <MotionDiv
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          >
+              <h1 className="font-headline text-4xl font-bold tracking-tight lg:text-5xl">
+              {course.name}
+              </h1>
+          </MotionDiv>
+          <MotionDiv
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-8"
+          >
+              <Card>
+                  <CardHeader>
+                      <CardTitle>Course Details</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                      {course.description.map((p: string, i: number) => <p key={i} className="text-muted-foreground">{p}</p>)}
+                      <p className="mt-6 text-primary font-semibold">More information coming soon. Please check back later or contact us for details.</p>
+                       <Link href="/register" prefetch={true}>
+                          <Button className="mt-6">
+                              Enroll Now
+                          </Button>
+                      </Link>
+                  </CardContent>
+              </Card>
+          </MotionDiv>
+      </div>
+    );
   }
 
-
-  // A generic layout for other courses
   return (
-    <div className="container mx-auto px-4 py-12">
-        <MotionDiv
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        >
-            <h1 className="font-headline text-4xl font-bold tracking-tight lg:text-5xl">
-            {course.name}
-            </h1>
-        </MotionDiv>
-        <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-8"
-        >
-            <Card>
-                <CardHeader>
-                    <CardTitle>Course Details</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    {course.description.map((p: string, i: number) => <p key={i} className="text-muted-foreground">{p}</p>)}
-                    <p className="mt-6 text-primary font-semibold">More information coming soon. Please check back later or contact us for details.</p>
-                     <Link href="/register" prefetch={true}>
-                        <Button className="mt-6">
-                            Enroll Now
-                        </Button>
-                    </Link>
-                </CardContent>
-            </Card>
-        </MotionDiv>
+    <div>
+      {courseContent}
+      <div className="container mx-auto px-4 py-12 text-center">
+        <Link href="/courses" prefetch={true}>
+          <Button variant="outline">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to All Courses
+          </Button>
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
