@@ -64,6 +64,24 @@ const formSchema = z.object({
   targetExam: z.string({
     required_error: "Please select your target exam.",
   }),
+  class12Board: z.string().optional(),
+  class12Marks: z.string().optional(),
+}).refine((data) => {
+    if (data.currentClass === '12th Pass (Dropper)') {
+        return !!data.class12Board;
+    }
+    return true;
+}, {
+    message: "Please select your Class 12th board.",
+    path: ["class12Board"],
+}).refine((data) => {
+    if (data.currentClass === '12th Pass (Dropper)') {
+        return !!data.class12Marks;
+    }
+    return true;
+}, {
+    message: "Please enter your 12th class marks.",
+    path: ["class12Marks"],
 });
 
 export default function ScholarshipApplicationPage() {
@@ -78,6 +96,8 @@ export default function ScholarshipApplicationPage() {
       schoolName: "",
     },
   });
+
+  const currentClassValue = form.watch("currentClass");
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
@@ -289,13 +309,53 @@ export default function ScholarshipApplicationPage() {
                       )}
                     />
                    </div>
+                   {currentClassValue === '12th Pass (Dropper)' && (
+                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        <FormField
+                          control={form.control}
+                          name="class12Board"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Class 12th Board</FormLabel>
+                              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <FormControl>
+                                  <SelectTrigger>
+                                    <SelectValue placeholder="Select Board" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  <SelectItem value="CBSE">CBSE</SelectItem>
+                                  <SelectItem value="ICSE">ICSE</SelectItem>
+                                  <SelectItem value="State Board">State Board</SelectItem>
+                                  <SelectItem value="Other">Other</SelectItem>
+                                </SelectContent>
+                              </Select>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                       <FormField
+                          control={form.control}
+                          name="class12Marks"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Class 12th Percentage / CGPA</FormLabel>
+                              <FormControl>
+                                <Input placeholder="e.g. 95% or 10 CGPA" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                     </div>
+                   )}
                    <FormField
                     control={form.control}
                     name="targetExam"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Target Exam</FormLabel>
-                        <Select onValuechange={field.onChange} defaultValue={field.value}>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
                               <SelectValue placeholder="Select your target exam" />
