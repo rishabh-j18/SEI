@@ -181,6 +181,9 @@ export default function ScholarshipApplicationPage() {
                                 mode="single"
                                 selected={field.value}
                                 onSelect={field.onChange}
+                                captionLayout="dropdown-buttons"
+                                fromYear={1990}
+                                toYear={new Date().getFullYear()}
                                 disabled={(date) =>
                                   date > new Date() || date < new Date("1990-01-01")
                                 }
