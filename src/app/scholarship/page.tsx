@@ -70,7 +70,7 @@ export default function ScholarshipPage() {
                         <p className="mt-4 rounded-full bg-background/20 px-4 py-1 text-sm font-semibold d:text-base">
                             For Class 11th, 12th & 12th Pass Students
                         </p>
-                        <Link href="/register" prefetch={true}>
+                        <Link href="/scholarship/apply" prefetch={true}>
                           <Button size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
                               Apply for SEIST Now <ArrowRight className="ml-2 h-5 w-5" />
                           </Button>
