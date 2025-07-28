@@ -83,7 +83,7 @@ export default function Home() {
           <InfoSection icon={Newspaper} title="Recent News" items={recentNews} />
         </div>
       </main>
-      <div className="pb-12 md:pb-24"></div>
+      <div className="pb-6 md:pb-2"></div>
     </div>
   );
 }
