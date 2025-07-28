@@ -7,9 +7,10 @@ import { MotionDiv } from '@/components/motion-wrapper';
 
 const featuredCourses = [
   {
+    
     title: "SSC-CGL (ANUSHAASAN BATCH)",
     description: "A specialized batch to crack the SSC-CGL exam with a disciplined approach.",
-    image: "https://placehold.co/600x400.png",
+    image: "/SSC_CGL.webp",
     aiHint: "government exam success",
     href: "/courses/ssc-cgl",
     icon: Star
@@ -17,7 +18,7 @@ const featuredCourses = [
   {
     title: "NEET",
     description: "Intensive coaching for the National Eligibility cum Entrance Test for aspiring medical students.",
-    image: "https://placehold.co/600x400.png",
+    image: "/Neet.jpg",
     aiHint: "medical student dna",
     href: "/courses/neet",
     icon: Microscope
@@ -25,7 +26,7 @@ const featuredCourses = [
   {
     title: "BANK",
     description: "Targeted training for various banking sector exams like IBPS PO, Clerk, and Specialist Officer.",
-    image: "https://placehold.co/600x400.png",
+    image: "/Bank.jpg",
     aiHint: "banking finance money",
     href: "/courses/bank",
     icon: Briefcase
@@ -92,7 +93,7 @@ function HeroSection() {
   return (
     <section className="relative h-[60vh] w-full bg-secondary">
       <Image
-        src="https://placehold.co/1800x1000.png"
+        src="/Institute.webp"
         alt="Students preparing for competitive exams"
         data-ai-hint="students exam preparation"
         fill

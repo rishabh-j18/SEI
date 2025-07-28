@@ -35,7 +35,7 @@ export default function WhySeiPage() {
             >
                 <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-lg">
                     <Image
-                        src="https://placehold.co/800x600.png"
+                        src="/Vision.webp"
                         alt="Our Mission"
                         data-ai-hint="diverse students group"
                         fill
@@ -64,7 +64,7 @@ export default function WhySeiPage() {
             >
                 <div className="relative h-80 w-full overflow-hidden rounded-lg shadow-lg">
                     <Image
-                        src="https://placehold.co/800x600.png"
+                        src="/Values.jpg"
                         alt="Our Values"
                         data-ai-hint="students collaborating"
                         fill

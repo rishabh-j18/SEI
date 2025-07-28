@@ -170,7 +170,7 @@ export default function RegistrationPage() {
             className="hidden md:block"
         >
             <div className="relative h-full min-h-[500px] w-full overflow-hidden rounded-lg">
-                <Image src="https://placehold.co/600x800.png" alt="Students studying" data-ai-hint="students campus" layout="fill" objectFit="cover" />
+                <Image src="/register.jpg" alt="Students studying" data-ai-hint="students campus" layout="fill" objectFit="cover" />
                 <div className="absolute inset-0 bg-primary/30"></div>
             </div>
         </MotionDiv>
