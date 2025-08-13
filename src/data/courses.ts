@@ -115,7 +115,7 @@ export const courseDetails = {
     alt: "JEE Preparation",
     aiHint: "engineering students studying",
     intro: "SEI ensures to provide quality education for the optimum results and success of students, so far, we have acquired remarkable selection ratios in competitive exams.",
-    description: "SEI has long been distinguished for providing the Best Classroom Coaching, Online Learning Facility and getting excellent results. The curriculum is specifically designed for the JEE 2027 aspirants along with their 11th & Board preparations. To strengthen the foundation, conceptual knowledge and enhance the academic skills this course is the best option. The course helps the aspirants with better understanding of the examination pattern and ensure their success in the JEE with ease through a year-long curriculum.",
+    description: ["SEI has long been distinguished for providing the Best Classroom Coaching, Online Learning Facility and getting excellent results. The curriculum is specifically designed for the JEE 2027 aspirants along with their 11th & Board preparations. To strengthen the foundation, conceptual knowledge and enhance the academic skills this course is the best option. The course helps the aspirants with better understanding of the examination pattern and ensure their success in the JEE with ease through a year-long curriculum."],
     highlights: [
         "Structured Academic Planner for JEE 2027.",
         "Complete Syllabus Coverage of Class 11th.",
@@ -163,7 +163,7 @@ export const courseDetails = {
     alt: "Students in a classroom",
     aiHint: "students classroom exam",
     intro: "Excel in your board exams with our comprehensive coaching for UP, CBSE, and ICSE students. Build a strong foundation and achieve outstanding results.",
-    description: "Our board preparation course is designed to provide students with a thorough understanding of the syllabus for CBSE, ICSE, and UP boards. We focus on clearing fundamental concepts, providing extensive practice, and conducting regular assessments to ensure students are well-prepared to score high marks in their final examinations.",
+    description: ["Our board preparation course is designed to provide students with a thorough understanding of the syllabus for CBSE, ICSE, and UP boards. We focus on clearing fundamental concepts, providing extensive practice, and conducting regular assessments to ensure students are well-prepared to score high marks in their final examinations."],
     features: [
         { title: "Multi-Board Curriculum", description: "Specialized coaching tailored for UP, CBSE, and ICSE board patterns, covering the complete syllabus for each." },
         { title: "Expert Faculty", description: "Learn from experienced teachers who have a deep understanding of board exam requirements and marking schemes." },
@@ -219,7 +219,7 @@ export const courseDetails = {
     alt: "Banking and Finance",
     aiHint: "banking finance success",
     intro: "If you're an individual looking for growth and success, the banking sector is for you. When you think about a career in banking, think about collaborating with SEI. After all, the best careers require the best guidance.",
-    description: "Financial institutions are a prime opportunity for students, as this is an industry that always shows growth. If you have the capability of being trustworthy and you attain a sense of responsibility, the banking sector is for you.",
+    description: ["Financial institutions are a prime opportunity for students, as this is an industry that always shows growth. If you have the capability of being trustworthy and you attain a sense of responsibility, the banking sector is for you."],
     features: [
         { title: "Interactive & Tech Enabled Classrooms", description: "Engage in dynamic learning with our state-of-the-art classroom technology." },
         { title: "Exam Before Exam", description: "Experience real exam conditions with our frequent mock tests to build confidence." },
@@ -246,7 +246,7 @@ export const courseDetails = {
     alt: "UP Police",
     aiHint: "police training law",
     intro: "Prepare to serve and protect. Our UP Police coaching program is designed to build the physical and mental strength required to excel in the demanding law enforcement recruitment process.",
-    description: "SEI provides comprehensive training for the UP Police entrance exam, covering all aspects of the selection process. From written exams to physical fitness tests, our expert faculty will guide you every step of the way to ensure you are fully prepared to join the force.",
+    description: ["SEI provides comprehensive training for the UP Police entrance exam, covering all aspects of the selection process. From written exams to physical fitness tests, our expert faculty will guide you every step of the way to ensure you are fully prepared to join the force."],
     features: [
         { title: "Interactive & Tech Enabled Classrooms", description: "Engage in dynamic learning with our state-of-the-art classroom technology and modern teaching aids." },
         { title: "Exam Before Exam", description: "Experience real exam conditions with our frequent mock tests to build confidence and improve time management." },
