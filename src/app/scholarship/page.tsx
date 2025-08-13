@@ -4,38 +4,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Award, BarChart, GraduationCap, Percent, Star, Target, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { MotionDiv } from "@/components/motion-wrapper";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
-
-const seistHighlights = [
-  {
-    title: "Upto 100% Scholarships",
-    description: "Students get awarded based on their performance in the scholarship test.",
-    icon: Star,
-  },
-  {
-    title: "Overall Analysis",
-    description: "The analysis is designed to analyse overall performance growth with data analysis charts in SPR.",
-    icon: BarChart,
-  },
-  {
-    title: "Uplift Talent",
-    description: "Scholarship test that offers direct entry to various courses for deserving students.",
-    icon: Award,
-  },
-  {
-    title: "Self-analysis",
-    description: "Students can analyze their strengths and area of improvement accordingly.",
-    icon: Target,
-  },
-];
-
+import { seistHighlights } from "@/data/scholarship";
 
 export default function ScholarshipPage() {
   return (
