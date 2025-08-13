@@ -1,66 +1,10 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BookCheck, Briefcase, Code, Microscope, Shield, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { MotionDiv } from "@/components/motion-wrapper";
-
-const courses = [
-    {
-        slug: "ssc-cgl",
-        title: "SSC-CGL SUPER 30 (ANUSHAASAN BATCH)",
-        description: "A specialized batch designed to crack the SSC-CGL exam with a disciplined and focused approach. Join SEI Campus, the best coaching center in India, to not only clear the exam but achieve a high rank.",
-        image: "/SSC.jpg",
-        aiHint: "government exam preparation",
-        duration: "1 Year",
-        icon: Star,
-    },
-    {
-        slug: "jee-mains",
-        title: "JEE MAINS",
-        description: "Comprehensive preparation for the Joint Entrance Examination (Main) to get into top engineering colleges.",
-        image: "/jee.webp",
-        aiHint: "engineering student studying",
-        duration: "2 Years",
-        icon: Code,
-    },
-    {
-        slug: "boards",
-        title: "Boards",
-        description: "Focused curriculum to excel in Class X and XII board examinations for CBSE, ICSE, and state boards.",
-        image: "/Boards.avif",
-        aiHint: "student writing exam",
-        duration: "1 Year",
-        icon: BookCheck,
-    },
-    {
-        slug: "neet",
-        title: "NEET",
-        description: "Intensive coaching for the National Eligibility cum Entrance Test for aspiring medical students.",
-        image: "/Neet.jpg",
-        aiHint: "medical student dna",
-        duration: "2 Years",
-        icon: Microscope,
-    },
-    {
-        slug: "bank",
-        title: "BANK",
-        description: "Targeted training for various banking sector exams like IBPS PO, Clerk, and Specialist Officer.",
-        image: "/Bank.jpg",
-        aiHint: "banking finance",
-        duration: "6 Months",
-        icon: Briefcase,
-    },
-    {
-        slug: "up-police",
-        title: "UP POLICE",
-        description: "Rigorous physical and academic training to prepare candidates for the Uttar Pradesh Police recruitment.",
-        image: "/Police.webp",
-        aiHint: "police officer",
-        duration: "6 Months",
-        icon: Shield,
-    },
-];
+import { courses } from "@/data/courses";
 
 export default function CoursesPage() {
   return (
