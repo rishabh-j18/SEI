@@ -1,13 +1,7 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { GraduationCap, Lightbulb, Users } from 'lucide-react';
 import { MotionDiv } from '@/components/motion-wrapper';
-
-const stats = [
-  { value: '10,000+', label: 'Alumni Network', icon: Users },
-  { value: '50+', label: 'Years of Excellence', icon: GraduationCap },
-  { value: '95%', label: 'Placement Rate', icon: Lightbulb },
-];
+import { stats } from '@/data/why-sei';
 
 export default function WhySeiPage() {
   return (

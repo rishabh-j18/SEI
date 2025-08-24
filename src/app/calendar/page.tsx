@@ -6,15 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar } from "@/components/ui/calendar";
 import { MotionDiv } from "@/components/motion-wrapper";
 import { Badge } from '@/components/ui/badge';
-
-const events = [
-  { date: new Date(2024, 8, 2), title: 'New Student Orientation', type: 'orientation' },
-  { date: new Date(2024, 8, 5), title: 'First Day of Classes', type: 'academic' },
-  { date: new Date(2024, 9, 15), title: 'Mid-term Exams Begin', type: 'exam' },
-  { date: new Date(2024, 10, 10), title: 'Diwali Break', type: 'holiday' },
-  { date: new Date(2024, 11, 20), title: 'Final Exams Begin', type: 'exam' },
-  { date: new Date(2024, 11, 25), title: 'Christmas Holiday', type: 'holiday' },
-];
+import { events } from '@/data/calendar';
 
 export default function AcademicCalendarPage() {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -60,6 +52,9 @@ export default function AcademicCalendarPage() {
                 className="w-full"
                 modifiers={modifiers}
                 modifiersStyles={modifiersStyles}
+                captionLayout="dropdown-buttons"
+                fromYear={new Date().getFullYear() - 1}
+                toYear={new Date().getFullYear() + 1}
               />
             </CardContent>
           </Card>
