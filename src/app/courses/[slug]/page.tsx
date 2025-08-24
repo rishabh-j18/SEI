@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 const courseDetails: { [key: string]: any } = {
   "ssc-cgl": {
     name: "SSC-CGL SUPER 30 (ANUSHAASAN BATCH)",
-    image: "https://placehold.co/800x600.png",
+    image: "/SSC.jpg",
     alt: "SSC CGL Preparation",
     aiHint: "students exam success",
     description: [
@@ -61,7 +61,7 @@ const courseDetails: { [key: string]: any } = {
   },
   "jee-mains": { 
     name: "JEE (Main+Advanced) 2025-26",
-    image: "https://placehold.co/800x600.png",
+    image: "/jee2.png",
     alt: "JEE Preparation",
     aiHint: "engineering students studying",
     intro: "SEI ensures to provide quality education for the optimum results and success of students, so far, we have acquired remarkable selection ratios in competitive exams.",
@@ -109,7 +109,7 @@ const courseDetails: { [key: string]: any } = {
    },
   "boards": { 
     name: "Class X & XII Boards (CBSE, ICSE, UP)",
-    image: "https://placehold.co/800x600.png",
+    image: "/Boards.avif",
     alt: "Students in a classroom",
     aiHint: "students classroom exam",
     intro: "Excel in your board exams with our comprehensive coaching for UP, CBSE, and ICSE students. Build a strong foundation and achieve outstanding results.",
@@ -135,7 +135,7 @@ const courseDetails: { [key: string]: any } = {
   },
   "neet": { 
     name: "NEET (PRE-MEDICAL) 2025-26",
-    image: "https://placehold.co/800x600.png",
+    image: "/Neet2.jpg",
     alt: "NEET Preparation",
     aiHint: "medical students doctor",
     intro: "SEI ensures to provide quality education for the optimum results and success of students, so far, we have acquired remarkable selection ratios in competitive exams.",
@@ -165,7 +165,7 @@ const courseDetails: { [key: string]: any } = {
   },
   "bank": {
     name: "BANK",
-    image: "https://placehold.co/800x600.png",
+    image: "/Bank.jpg",
     alt: "Banking and Finance",
     aiHint: "banking finance success",
     intro: "If you're an individual looking for growth and success, the banking sector is for you. When you think about a career in banking, think about collaborating with SEI. After all, the best careers require the best guidance.",
@@ -192,7 +192,7 @@ const courseDetails: { [key: string]: any } = {
   },
   "up-police": { 
     name: "UP POLICE",
-    image: "https://placehold.co/800x600.png",
+    image: "/Police.webp",
     alt: "UP Police",
     aiHint: "police training law",
     intro: "Prepare to serve and protect. Our UP Police coaching program is designed to build the physical and mental strength required to excel in the demanding law enforcement recruitment process.",
